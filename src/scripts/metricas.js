@@ -24,7 +24,8 @@ angular.module('metricas', [
 
   .state('retencion', {
     url: '/retencion',
-    templateUrl: 'assets/templates/retencion.html'
+    templateUrl: 'assets/templates/retencion.html',
+    controller: 'retencionCtrl as ctrl'
   })
 
   .state('rfm', {
@@ -35,6 +36,6 @@ angular.module('metricas', [
 
 
   $urlRouterProvider.otherwise('/');
-  
+
   //$locationProvider.html5Mode(true);
 })
