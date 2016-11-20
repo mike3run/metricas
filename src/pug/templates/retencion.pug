@@ -6,10 +6,14 @@
     form(novalidate)
       .form-group
         label.block Gastos de Retención
-          input.form-control(type='number', placeholder='Márgen', ng-model="ctrl.gastos")
+          .input-group
+            span.input-group-addon $
+            input.form-control(type='number', placeholder='Gastos de Retención', ng-model="ctrl.gastos")
       .form-group
         label.block Número de Clientes Retenidos
-          input.form-control(type='number', placeholder='Retención', ng-model="ctrl.numero")
+          .input-group
+            span.input-group-addon #
+            input.form-control(type='number', placeholder='Número de Clientes Retenidos', ng-model="ctrl.numero")
 
       button.btn.btn-info(type='submit', ng-click="ctrl.cpr(ctrl.gastos, ctrl.numero)")
         | Calcular

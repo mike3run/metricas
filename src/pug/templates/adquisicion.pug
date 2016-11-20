@@ -6,11 +6,15 @@
     form
       .form-group
         label.block Gastos de Adquisición
-          input.form-control(type='number', placeholder='Márgen', ng-model="ctrl.gastos")
+          .input-group
+            span.input-group-addon $
+            input.form-control(type='number', placeholder='Gastos de Adquisición', ng-model="ctrl.gastos")
         small.form-text.text-muted We'll never share your email with anyone else.
       .form-group
         label.block Número de Clientes Adquiridos
-          input.form-control(type='number', placeholder='Retención', ng-model="ctrl.numero")
+          .input-group
+            span.input-group-addon #
+            input.form-control(type='number', placeholder='Número de Clientes Adquiridos', ng-model="ctrl.numero")
       button.btn.btn-info(type='submit', ng-click="ctrl.cpa(ctrl.gastos, ctrl.numero)")
         | Calcular
 

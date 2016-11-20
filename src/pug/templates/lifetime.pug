@@ -6,14 +6,19 @@
     form(novalidate)
       .form-group
         label.block Márgen
-          input.form-control(type='number', placeholder='Márgen', ng-model="ctrl.margen")
-        //- small.form-text.text-muted We'll never share your email with anyone else.
+          .input-group
+            span.input-group-addon $
+            input.form-control(type='number', placeholder='Márgen', ng-model="ctrl.margen")
       .form-group
         label.block Índice de Retención
-          input.form-control(type='number', placeholder='Retención', ng-model="ctrl.retencion")
+          .input-group
+            input.form-control(type='number', placeholder='Índice de Retención', ng-model="ctrl.retencion")
+            span.input-group-addon %
       .form-group
         label.block Índice de Descuento
-          input.form-control(type='number', placeholder='Descuento', ng-model="ctrl.descuento")
+          .input-group
+            input.form-control(type='number', placeholder='Índice de Descuento', ng-model="ctrl.descuento")
+            span.input-group-addon %
 
       button.btn.btn-info(ng-click="ctrl.clv(ctrl.margen, ctrl.retencion, ctrl.descuento)") Calcular
 
