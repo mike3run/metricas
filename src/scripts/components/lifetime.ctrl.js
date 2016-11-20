@@ -4,7 +4,8 @@ angular.module('metricas')
 .controller('lifetimeCtrl', function () {
   var self = this
 
-  self.cpr = function (gastos, numero) {
-    self.respuesta = gastos / numero
+  // CLV ($)= Margen ($) (Indice de retencion (%) / (1+Indice de descuento (%) - Indice de retencion (%))
+  self.clv = function (margen, retencion, descuento) {
+    self.respuesta = (margen * retencion) / (1 + descuento - retencion)
   }
 })
