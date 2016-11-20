@@ -11,8 +11,7 @@ module.exports = {
     './src/bower/modular-scale/stylesheets',
     './src/bower/manila-mixins/src',
     './src/bower/bem-constructor/dist',
-    './src/bower/bootstrap/scss',
-    './src/bower/font-awesome/scss'
+    './src/bower/bootstrap/scss'
   ],
   // Stuff for UnCss
   uncssHtml : [
@@ -37,8 +36,7 @@ module.exports = {
   ],
   // Asset File Paths
   assets : [
-    './src/assets/**/*',
-    './src/bower/font-awesome/fonts/**/*'
+    './src/assets/**/*'
   ],
   errorHandler : function (error) {
     console.log(error.toString());

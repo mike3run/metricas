@@ -22,7 +22,6 @@
     "bem-constructor": "^1.1.0",
     "angular": "^1.5.8",
     "angular-ui-router": "^0.3.2",
-    "bootstrap": "v4.0.0-alpha.5",
-    "font-awesome": "^4.7.0"
+    "bootstrap": "v4.0.0-alpha.5"
   }
 }
