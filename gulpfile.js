@@ -19,6 +19,7 @@ gulp.task('build', gulp.series(
   'fonts',
   'sass',
   'scripts',
+  'scripts:vendor',
   'imagemin',
   'assets'
 ));
@@ -49,7 +50,6 @@ gulp.task('watch', done => {
   gulp.watch('src/sass/**/*', gulp.series('sass', reload))
   gulp.watch('src/scripts/**/*', gulp.series('scripts', reload))
   gulp.watch(config.vendorScripts, gulp.series('scripts:vendor', reload))
-  gulp.watch(config.rootFiles, gulp.series('root', reload))
   gulp.watch('src/assets/**/*', gulp.series('assets', reload))
   gulp.watch('src/fonts/**/*', gulp.series('fonts', reload))
   gulp.watch('src/index.pug', gulp.series('pug:src', reload))

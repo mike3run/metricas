@@ -4,8 +4,12 @@
   },
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
+    "browser": true
   },
+  "globals": {
+    "angular": false
+    },
   "rules": {
     "indent": [2, 2],
     "no-undef": 2,

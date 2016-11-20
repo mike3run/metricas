@@ -4,10 +4,17 @@ html
     meta(charset='utf-8')
     meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width')
     title Métricas de Mercadotecnia
+    base(href="/")
     link(href='assets/stylesheets/main.css', rel='stylesheet')
-    script(src='assets/scripts/vendor.js')
-    script(src='assets/scripts/app.js')
+    script(src='assets/javascript/vendor.js')
+    script(src='assets/javascript/app.js')
   body
     .is-hidden
       include includes/inline.svg
     main(ng-app='metricas')
+      .container
+        a(ui-sref="adquisicion") Adquisición
+        a(ui-sref="lifetime") Lifetime
+        a(ui-sref="retencion") Retención
+        a(ui-sref="rfm") RFM
+        ui-view
