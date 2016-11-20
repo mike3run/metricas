@@ -75,5 +75,23 @@ angular.module('metricas')
 
   }
 
+  self.asignadoMonto = function (monto) {
+    return monto * (self.montoAsignado / 100)
+  }
+
+  self.ponderadoMonto = function (puntos) {
+    if(typeof puntos !== 'number') {
+      return 'Error'
+    }
+
+    var resultado = puntos * self.M
+
+    if (resultado >= self.montoLimite ) {
+      return self.montoLimite
+    }
+
+    return resultado
+  }
+
 
 })

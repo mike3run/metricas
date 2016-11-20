@@ -19,7 +19,7 @@
             td: input(type='text', placeholder="Nombre", ng-model="dato.nombre")
             td: input(type='number', placeholder="Meses", ng-model="dato.recency")
             td {{dato.puntos = ctrl.recencyPuntos(dato.recency)}}
-            td {{ctrl.ponderados(dato.puntos)}}
+            td {{ dato.ponderado1 = ctrl.ponderados(dato.puntos)}}
 
     .table-responsive
       table.table.table-sm.table-hover.table-striped
@@ -34,7 +34,7 @@
             td {{dato.nombre}}
             td: input(type='number', placeholder="# Veces", ng-model="dato.frecuencia")
             td {{dato.puntosFrecuencia = ctrl.asignadoFrecuencia(dato.frecuencia)}}
-            td {{ctrl.ponderadoFrecuencia(dato.puntosFrecuencia)}}
+            td {{ dato.ponderado2 = ctrl.ponderadoFrecuencia(dato.puntosFrecuencia)}}
 
     .table-responsive
       table.table.table-sm.table-hover.table-striped
@@ -47,9 +47,9 @@
         tbody.table-hover
           tr(ng-repeat="dato in ctrl.datos")
             td {{dato.nombre}}
-            td: input(type='number', placeholder="Frecuencia", ng-model="dato.monetary")
-            td {{dato.asignados3}}
-            td {{dato.ponderados3}}
+            td: input(type='number', placeholder="$", ng-model="dato.monetary")
+            td {{ dato.puntosMonto = ctrl.asignadoMonto(dato.monetary) }}
+            td {{ dato.ponderado3 = ctrl.ponderadoMonto(dato.puntosMonto)}}
 
     .table-responsive
       table.table.table-sm.table-hover.table-striped
@@ -60,7 +60,7 @@
         tbody.table-hover
           tr(ng-repeat="dato in ctrl.datos")
             td {{dato.nombre}}
-            td {{dato.valorCliente}}
+            td {{ dato.ponderado1 + dato.ponderado2 + dato.ponderado3 }}
 
   .col-md-4
     .card.card-block
@@ -104,8 +104,9 @@
         .card.card-block
           h4.card-title Monto
           .form-group
-            label.block Monto Asignado (m)
-              input.form-control(type="number", ng-model="ctrl.montoAsignado")
+            label.block Monto Asignado m (%)
+              input.form-control(type="number", ng-model="ctrl.montoAsignado", placeholder='%')
+
           .form-group.has-success
             label.block M
               input.form-control(type="number", ng-model="ctrl.M")
