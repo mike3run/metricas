@@ -20,18 +20,20 @@ const prodLocals = {
   productionMode : true
 };
 
-
 gulp.task('pug', done => {
-  return gulp.src('./src/pug/**/!(_)*.pug')
-  .pipe( when( !production, $.pug({
-    pretty : true,
-    basedir : './src/pug',
-    locals : devLocals
-  }) )).on('error', config.errorHandler)
-  .pipe( when(production, $.pug({
-    basedir : './src/pug',
-    locals : prodLocals
-  }) ) ).on('error', config.errorHandler)
-  .pipe( gulp.dest(config.distFolder) );
-  done();
+  return gulp.src('./src/pug/templates/**/!(_)*.pug')
+    .pipe( $.pug({
+      pretty : true,
+      basedir : './src/pug'
+    }) ).on('error', config.errorHandler)
+   .pipe( gulp.dest(`${config.distFolder}/assets/templates`))
+});
+
+gulp.task('pug:src', done => {
+  return gulp.src('./src/pug/index.pug')
+    .pipe( $.pug({
+      pretty : true,
+      basedir : './src/pug'
+    }) ).on('error', config.errorHandler)
+   .pipe( gulp.dest(config.distFolder))
 });

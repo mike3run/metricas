@@ -10,7 +10,9 @@ module.exports = {
   sassIncludes : [
     './src/bower/modular-scale/stylesheets',
     './src/bower/manila-mixins/src',
-    './src/bower/bem-constructor/dist'
+    './src/bower/bem-constructor/dist',
+    './src/bower/bootstrap/scss',
+    './src/bower/font-awesome/scss'
   ],
   // Stuff for UnCss
   uncssHtml : [
@@ -20,11 +22,13 @@ module.exports = {
     ''
   ],
   // Here you add the paths to the full-length js files from your Bower imports
+  vendorScripts : [
+    './src/bower/angular/angular.min.js',
+    './src/bower/angular-ui-router/release/angular-ui-router.min.js',
+    './src/bower/svg4everybody/dist/svg4everybody.min.js'
+  ],
   scriptFiles : [
-    './src/bower/jquery/dist/jquery.min.js',
-    './src/bower/svg4everybody/dist/svg4everybody.min.js',
-    './src/scripts/plugins/*.js',
-    './src/scripts/*.js'
+    './src/scripts/**/*.js'
   ],
   // Path to un-worked font files
   fonts : [
@@ -33,7 +37,8 @@ module.exports = {
   ],
   // Asset File Paths
   assets : [
-    './src/assets/**/*'
+    './src/assets/**/*',
+    './src/bower/font-awesome/fonts/**/*'
   ],
   errorHandler : function (error) {
     console.log(error.toString());

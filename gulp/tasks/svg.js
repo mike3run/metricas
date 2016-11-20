@@ -16,7 +16,7 @@ gulp.task('svg:inline', done => {
     }]
   }) )
   .pipe( $.svgstore( {inlineSvg : true} ) )
-  .pipe( gulp.dest('./src/pug/layouts/includes') );
+  .pipe( gulp.dest('./src/pug/includes') );
   done();
 });
 

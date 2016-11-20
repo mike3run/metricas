@@ -15,6 +15,7 @@ gulp.task('build', gulp.series(
   'clean',
   'svg',
   'pug',
+  'pug:src',
   'fonts',
   'sass',
   'scripts',
@@ -39,17 +40,19 @@ gulp.task('browser-sync', done => {
     open : false,
     logConnections : true
   });
-  done();
 });
 
 gulp.task('watch', done => {
-  gulp.watch('src/svg/inline/**/*', gulp.series('svg:inline', reload));
-  gulp.watch('src/svg/external/**/*', gulp.series('svg:external', reload));
-  gulp.watch('src/pug/**/*', gulp.series('pug', reload));
-  gulp.watch('src/sass/**/*', gulp.series('sass', reload));
-  gulp.watch('src/scripts/**/*', gulp.series('scripts', reload));
-  gulp.watch('src/assets/**/*', gulp.series('assets', reload));
-  gulp.watch('src/fonts/**/*', gulp.series('fonts', reload));
+  gulp.watch('src/svg/inline/**/*', gulp.series('svg:inline', 'pug:src', reload))
+  gulp.watch('src/svg/external/**/*', gulp.series('svg:external', reload))
+  gulp.watch('src/pug/**/*', gulp.series('pug', 'pug:src', reload))
+  gulp.watch('src/sass/**/*', gulp.series('sass', reload))
+  gulp.watch('src/scripts/**/*', gulp.series('scripts', reload))
+  gulp.watch(config.vendorScripts, gulp.series('scripts:vendor', reload))
+  gulp.watch(config.rootFiles, gulp.series('root', reload))
+  gulp.watch('src/assets/**/*', gulp.series('assets', reload))
+  gulp.watch('src/fonts/**/*', gulp.series('fonts', reload))
+  gulp.watch('src/index.pug', gulp.series('pug:src', reload))
   done();
 });
 

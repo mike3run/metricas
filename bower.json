@@ -16,12 +16,13 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^2.2.2",
     "modular-scale": "^2.1.1",
     "manila-mixins": "*",
     "svg4everybody": "^2.1.0",
     "bem-constructor": "^1.1.0",
     "angular": "^1.5.8",
-    "bootstrap": "^3.3.7"
+    "angular-ui-router": "^0.3.2",
+    "bootstrap": "v4.0.0-alpha.5",
+    "font-awesome": "^4.7.0"
   }
 }
