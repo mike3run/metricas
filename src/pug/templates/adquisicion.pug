@@ -6,18 +6,19 @@
     form
       .form-group
         label.block Gastos de Adquisición
-          input.form-control(type='number', placeholder='Márgen')
+          input.form-control(type='number', placeholder='Márgen', ng-model="ctrl.gastos")
         small.form-text.text-muted We'll never share your email with anyone else.
       .form-group
         label.block Número de Clientes Adquiridos
-          input.form-control(type='number', placeholder='Retención')
-      button.btn.btn-info(type='submit') Submit
+          input.form-control(type='number', placeholder='Retención', ng-model="ctrl.numero")
+      button.btn.btn-info(type='submit', ng-click="ctrl.cpa(ctrl.gastos, ctrl.numero)")
+        | Calcular
 
   .offset-md-3.col-md-5
-    .card.card-block.card-info.card-inverse
+    .card.card-block(ng-class="{'card-info' : ctrl.respuesta, 'card-inverse': ctrl.respuesta }")
       h4.card-title Costo Promedio
-      p.card-text Chingos de varos
+      p.card-text(ng-if="ctrl.respuesta") {{ ctrl.respuesta | number:2 }}
 
     .card.card-block
       h4.card-title Fórmula
-      p.card-text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      p.card-text Costo promedio de adquisición ($) =  gastos de adquisición ($) / número de clientes adquiridos (#)
