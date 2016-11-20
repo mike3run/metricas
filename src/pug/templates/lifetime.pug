@@ -1,19 +1,24 @@
 .row
   .col-md-12
-    h1.mb-3 Costumer Lifetime Value
+    h1.mb-3 Customer Lifetime Value
 .row
-  .col-md-8
+  .col-md-4
     form
       .form-group
-        label(for='exampleInputEmail1') Email address
-        input#exampleInputEmail1.form-control(type='text', placeholder='Enter email')
-        small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+        label.block Márgen
+          input.form-control(type='number', placeholder='Márgen')
+        small.form-text.text-muted We'll never share your email with anyone else.
       .form-group
-        label(for='exampleInputPassword1') Password
-        input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+        label.block Índice de Retención
+          input.form-control(type='number', placeholder='Retención')
+      .form-group
+        label.block Índice de Descuento
+          input.form-control(type='number', placeholder='Descuento')
 
       button.btn.btn-info(type='submit') Submit
-  .col-md-4
+
+
+  .offset-md-3.col-md-5
     .card.card-block.card-info.card-inverse
       h4.card-title Costo Promedio
       p.card-text Chingos de varos
