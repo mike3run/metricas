@@ -14,12 +14,14 @@ angular.module('metricas', [
 
   .state('adquisicion', {
     url: '/',
-    templateUrl: 'assets/templates/adquisicion.html'
+    templateUrl: 'assets/templates/adquisicion.html',
+    controller: 'adquisicionCtrl as ctrl'
   })
 
   .state('lifetime', {
     url: '/lifetime',
-    templateUrl: 'assets/templates/lifetime.html'
+    templateUrl: 'assets/templates/lifetime.html',
+    controller: 'lifetimeCtrl as ctrl'
   })
 
   .state('retencion', {
@@ -30,7 +32,8 @@ angular.module('metricas', [
 
   .state('rfm', {
     url: '/rfm',
-    templateUrl: 'assets/templates/rfm.html'
+    templateUrl: 'assets/templates/rfm.html',
+    controller: 'rfmCtrl as ctrl'
   })
 
 
