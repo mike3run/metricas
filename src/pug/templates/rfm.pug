@@ -3,6 +3,7 @@
     h1.mb-3 Modelo RFM
   .col-md-3
     img(src='assets/images/upaep.png' alt="Logo de la UPAEP")
+
 .row
   .col-md-8
     .table-responsive
@@ -67,6 +68,9 @@
       button.btn.btn-info(type='submit', ng-click="ctrl.otroDemo()")
         | Agregar nuevo
 
+
+.row
+  .col-md-4
     .card.card-block
       h4.card-title Recency (Meses)
       .form-group
@@ -82,6 +86,7 @@
         label.block R
           input.form-control(type="number", ng-model="ctrl.R")
 
+  .col-md-4
     .card.card-block
       h4.card-title Frecuencia
       .form-group
@@ -90,7 +95,11 @@
       .form-group.has-success
         label.block F
           input.form-control(type="number", ng-model="ctrl.F")
+      .form-group.has-warning
+        label.block Límite de Frecuencia
+          input.form-control(type="number", ng-model="ctrl.frecuencyLimite")
 
+  .col-md-4
     .card.card-block
       h4.card-title Monto
       .form-group
@@ -99,3 +108,6 @@
       .form-group.has-success
         label.block M
           input.form-control(type="number", ng-model="ctrl.M")
+      .form-group.has-warning
+        label.block Límite de Monto
+          input.form-control(type="number", ng-model="ctrl.montoLimite")

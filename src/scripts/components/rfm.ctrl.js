@@ -4,22 +4,21 @@ angular.module('metricas')
 .controller('rfmCtrl', function () {
   var self = this
 
-  self.demo = {
+  self.datos = []
+
+  self.datos.push({
     nombre: 'Carlos',
     recency: 8,
-    asignados1: 1,
-    ponderados1: 3,
+    asignados1: null,
+    ponderados1: null,
     frecuencia: 2,
-    asignados2: 60,
-    ponderados2: 300,
+    asignados2: null,
+    ponderados2: null,
     monetary: 1200,
-    asignados3: 120,
-    ponderados3: 240,
-    valorCliente: 543
-  }
-
-  self.datos = []
-  self.datos.push(self.demo)
+    asignados3: null,
+    ponderados3: null,
+    valorCliente: null
+  })
 
   self.otroDemo = function () {
     self.datos.push({
@@ -43,8 +42,10 @@ angular.module('metricas')
   self.recencyAsignado3 = 1
 
   self.frecuencyAsignado = 30
+  self.frecuencyLimite = 900
 
   self.montoAsignado = 10
+  self.montoLimite = 900
 
   self.R = 3
   self.F = 5
