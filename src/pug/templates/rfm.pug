@@ -17,9 +17,9 @@
         tbody
           tr(ng-repeat="dato in ctrl.datos")
             td: input(type='text', placeholder="Nombre", ng-model="dato.nombre")
-            td: input(type='number', placeholder="Recency", ng-model="dato.recency")
-            td {{dato.asignados1}}
-            td {{dato.ponderados1}}
+            td: input(type='number', placeholder="Meses", ng-model="dato.recency")
+            td {{dato.puntos = ctrl.recencyPuntos(dato.recency)}}
+            td {{ctrl.ponderados(dato.puntos)}}
 
     .table-responsive
       table.table.table-sm.table-hover.table-striped

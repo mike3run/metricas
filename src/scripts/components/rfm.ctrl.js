@@ -9,30 +9,17 @@ angular.module('metricas')
   self.datos.push({
     nombre: 'Carlos',
     recency: 8,
-    asignados1: null,
-    ponderados1: null,
     frecuencia: 2,
-    asignados2: null,
-    ponderados2: null,
     monetary: 1200,
-    asignados3: null,
     ponderados3: null,
-    valorCliente: null
   })
 
   self.otroDemo = function () {
     self.datos.push({
       nombre: null,
       recency: null,
-      asignados1: null,
-      ponderados1: null,
       frecuencia: null,
-      asignados2: null,
-      ponderados2: null,
       monetary: null,
-      asignados3: null,
-      ponderados3: null,
-      valorCliente: null
     })
   }
 
@@ -51,7 +38,23 @@ angular.module('metricas')
   self.F = 5
   self.M = 2
 
-  self.cpr = function (gastos, numero) {
-    self.respuesta = gastos / numero
+  self.recencyPuntos = function (recencia) {
+    if (recencia >= 0 && recencia <= 3) {
+      return self.recencyAsignado1
+    } else if (recencia >= 4 && recencia <= 6) {
+      return self.recencyAsignado2
+    } else if (recencia >= 7 && recencia <= 12) {
+      return self.recencyAsignado3
+    } else {
+      return 'Elige un valor de 0 -12'
+    }
   }
+
+  self.ponderados = function (puntos) {
+    if(typeof puntos === 'number') {
+      return puntos * self.R
+    }
+    return 'Error'
+  }
+
 })
