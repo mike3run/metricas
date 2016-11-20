@@ -4,26 +4,98 @@
   .col-md-3
     img(src='assets/images/upaep.png' alt="Logo de la UPAEP")
 .row
+  .col-md-8
+    .table-responsive
+      table.table.table-sm.table-hover.table-striped
+        thead
+          tr.table-success
+            th Nombre
+            th Recencia de Compra
+            th Puntos Asignados
+            th Puntos Ponderados
+        tbody
+          tr(ng-repeat="dato in ctrl.datos")
+            td: input(type='text', placeholder="Nombre", ng-model="dato.nombre")
+            td: input(type='number', placeholder="Recency", ng-model="dato.recency")
+            td {{dato.asignados1}}
+            td {{dato.ponderados1}}
+
+    .table-responsive
+      table.table.table-sm.table-hover.table-striped
+        thead
+          tr.table-success
+            th Nombre
+            th Frecuencia de Compra
+            th Puntos Asignados
+            th Puntos Ponderados
+        tbody.table-hover
+          tr(ng-repeat="dato in ctrl.datos")
+            td {{dato.nombre}}
+            td: input(type='number', placeholder="Frecuencia", ng-model="dato.frecuencia")
+            td {{dato.asignados2}}
+            td {{dato.ponderados2}}
+
+    .table-responsive
+      table.table.table-sm.table-hover.table-striped
+        thead
+          tr.table-success
+            th Nombre
+            th Monto de Compra
+            th Puntos Asignados
+            th Puntos Ponderados
+        tbody.table-hover
+          tr(ng-repeat="dato in ctrl.datos")
+            td {{dato.nombre}}
+            td: input(type='number', placeholder="Frecuencia", ng-model="dato.monetary")
+            td {{dato.asignados3}}
+            td {{dato.ponderados3}}
+
+    .table-responsive
+      table.table.table-sm.table-hover.table-striped
+        thead
+          tr.table-danger
+            th Nombre
+            th Valor de Cliente
+        tbody.table-hover
+          tr(ng-repeat="dato in ctrl.datos")
+            td {{dato.nombre}}
+            td {{dato.valorCliente}}
+
   .col-md-4
-    form
-      .form-group
-        label.block Márgen
-          input.form-control(type='number', placeholder='Márgen')
-        small.form-text.text-muted We'll never share your email with anyone else.
-      .form-group
-        label.block Índice de Retención
-          input.form-control(type='number', placeholder='Retención')
-      .form-group
-        label.block Índice de Descuento
-          input.form-control(type='number', placeholder='Descuento')
-
-      button.btn.btn-info(type='submit') Submit
-
-  .offset-md-3.col-md-5
-    .card.card-block.card-info.card-inverse
-      h4.card-title Costo Promedio
-      p.card-text Chingos de varos
+    .card.card-block
+      h4.card-title Cliente
+      button.btn.btn-info(type='submit', ng-click="ctrl.otroDemo()")
+        | Agregar nuevo
 
     .card.card-block
-      h4.card-title Fórmula
-      p.card-text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      h4.card-title Recency (Meses)
+      .form-group
+        label.block 0 a 3
+          input.form-control(type="number", ng-model="ctrl.recencyAsignado1")
+      .form-group
+        label.block 4 a 6
+          input.form-control(type="number", ng-model="ctrl.recencyAsignado2")
+      .form-group
+        label.block 7 a 12
+          input.form-control(type="number", ng-model="ctrl.recencyAsignado3")
+      .form-group.has-success
+        label.block R
+          input.form-control(type="number", ng-model="ctrl.R")
+
+    .card.card-block
+      h4.card-title Frecuencia
+      .form-group
+        label.block Frecuencia Asignada (f)
+          input.form-control(type="number", ng-model="ctrl.frecuencyAsignado")
+      .form-group.has-success
+        label.block F
+          input.form-control(type="number", ng-model="ctrl.F")
+
+    .card.card-block
+      h4.card-title Monto
+      .form-group
+        label.block Monto Asignado (m)
+          input.form-control(type="number", ng-model="ctrl.montoAsignado")
+      .form-group.has-success
+        label.block M
+          input.form-control(type="number", ng-model="ctrl.M")
