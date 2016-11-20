@@ -32,9 +32,9 @@
         tbody.table-hover
           tr(ng-repeat="dato in ctrl.datos")
             td {{dato.nombre}}
-            td: input(type='number', placeholder="Frecuencia", ng-model="dato.frecuencia")
-            td {{dato.asignados2}}
-            td {{dato.ponderados2}}
+            td: input(type='number', placeholder="# Veces", ng-model="dato.frecuencia")
+            td {{dato.puntosFrecuencia = ctrl.asignadoFrecuencia(dato.frecuencia)}}
+            td {{ctrl.ponderadoFrecuencia(dato.puntosFrecuencia)}}
 
     .table-responsive
       table.table.table-sm.table-hover.table-striped

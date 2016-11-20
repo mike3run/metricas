@@ -10,8 +10,7 @@ angular.module('metricas')
     nombre: 'Carlos',
     recency: 8,
     frecuencia: 2,
-    monetary: 1200,
-    ponderados3: null,
+    monetary: 1200
   })
 
   self.otroDemo = function () {
@@ -19,7 +18,7 @@ angular.module('metricas')
       nombre: null,
       recency: null,
       frecuencia: null,
-      monetary: null,
+      monetary: null
     })
   }
 
@@ -56,5 +55,25 @@ angular.module('metricas')
     }
     return 'Error'
   }
+
+  self.asignadoFrecuencia = function (frecuencia) {
+    return frecuencia * self.frecuencyAsignado
+  }
+
+  self.ponderadoFrecuencia = function (puntos) {
+    if(typeof puntos !== 'number') {
+      return 'Error'
+    }
+
+    var resultado = puntos * self.F
+
+    if (resultado >= self.frecuencyLimite ) {
+      return self.frecuencyLimite
+    }
+
+    return resultado
+
+  }
+
 
 })
