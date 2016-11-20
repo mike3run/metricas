@@ -12,9 +12,5 @@ html
     .is-hidden
       include includes/inline.svg
     main(ng-app='metricas')
-      .container
-        a(ui-sref="adquisicion") Adquisición
-        a(ui-sref="lifetime") Lifetime
-        a(ui-sref="retencion") Retención
-        a(ui-sref="rfm") RFM
-        ui-view
+      include templates/_menu
+      ui-view
